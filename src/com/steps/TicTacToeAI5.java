@@ -4,10 +4,10 @@ import com.model.*;
 
 import java.util.Scanner;
 
-public class TicTacToeAI3 {
+public class TicTacToeAI5 {
 
     public static void main(String[] args) {
-        new TicTacToeAI3().run();
+        new TicTacToeAI5().run();
     }
 
     public void run() {
@@ -16,8 +16,8 @@ public class TicTacToeAI3 {
         do {
             command = getCommand(scanner);
             if (isStartValid(command)) {
-                Game game = new Game(command);
-                game.play();
+                Game tictactoe = new Game(command);
+                tictactoe.play();
             }
         } while (!isExitValid(command[0]));
     }
@@ -51,6 +51,8 @@ public class TicTacToeAI3 {
     }
 
     private boolean isValidPlayerValue(String playerValue) {
-        return "user".equals(playerValue) || "easy".equals(playerValue);
+        return "user".equals(playerValue) || "easy".equals(playerValue)
+                || "medium".equals(playerValue) || "hard".equals(playerValue);
     }
 }
+
